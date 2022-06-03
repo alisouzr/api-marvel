@@ -1,0 +1,29 @@
+{
+  "name": "api-marvel",
+  "version": "1.0.0",
+  "description": "A project that i consummed a API od Marvel",
+  "private": true,
+  "scripts": {
+    "sass": "sass ./src/sass:./src/css --watch --no-source-map",
+    "build": "webpack --watch"
+  },
+  "keywords": [
+    "api",
+    "js",
+    "fetch"
+  ],
+  "author": "aliny souza",
+  "license": "MIT",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "css-loader": "^6.7.1",
+    "mini-css-extract-plugin": "^2.6.0",
+    "node-sass": "^7.0.1",
+    "sass-loader": "^13.0.0",
+    "style-loader": "^3.3.1"
+  }
+}
