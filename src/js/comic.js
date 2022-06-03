@@ -1,6 +1,6 @@
-const timeStamp = '1654098089';
-const apiKey = '4c3607b7715a0d2b401a0c68b168913b';
-const hash = '14670b0fc3dff7f0e365a7b220b2ccd4';
+const timeStamp = '';
+const apiKey = '';
+const hash = '';
 
 fetch(`http://gateway.marvel.com/v1/public/comics?ts=${timeStamp}&apikey=${apiKey}&hash=${hash}`).then((response) => {
     return response.json();
