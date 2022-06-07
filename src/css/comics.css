@@ -3,6 +3,18 @@ body {
   margin-top: 20px;
   background-color: black;
 }
+body nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+body nav ul li {
+  list-style: none;
+}
+body nav ul li a {
+  text-decoration: none;
+}
 body div#comics {
   display: grid;
   grid-template-columns: 50% 50%;

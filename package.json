@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "sass": "sass ./src/sass:./src/css --watch --no-source-map",
-    "build": "webpack --watch"
+    "build": "webpack --watch",
+    "start": "nodemon ./src/comic.js"
   },
   "keywords": [
     "api",
@@ -15,15 +16,20 @@
   "author": "aliny souza",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "babel-loader": "^8.2.5",
     "html-webpack-plugin": "^5.5.0",
+    "nodemon": "^2.0.16",
     "webpack": "^5.73.0",
-    "webpack-cli": "^4.9.2"
-  },
-  "dependencies": {
+    "webpack-cli": "^4.9.2",
+    "axios": "^0.27.2",
     "css-loader": "^6.7.1",
+    "express": "^4.18.1",
     "mini-css-extract-plugin": "^2.6.0",
     "node-sass": "^7.0.1",
     "sass-loader": "^13.0.0",
     "style-loader": "^3.3.1"
-  }
+  },
+  "dependencies": {}
 }

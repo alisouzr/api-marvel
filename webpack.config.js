@@ -25,6 +25,16 @@ module.exports = {
                     'style-loader',
                     'css-loader'
                 ]
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
             }
         ]
     },
@@ -32,6 +42,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'comics.html',
             template: './src/pages/comics.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'characters.html',
+            template: './src/pages/characters.html'
         }),
         new MiniCssExtractPlugin({
             filename: 'style.css'

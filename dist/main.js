@@ -7,16 +7,16 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/css/style.css":
-/*!***************************!*\
-  !*** ./src/css/style.css ***!
-  \***************************/
+/***/ "./src/js/characters.js":
+/*!******************************!*\
+  !*** ./src/js/characters.js ***!
+  \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://api-marvel/./src/css/style.css?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _comic_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./comic.js */ \"./src/js/comic.js\");\n\nfetch(\"http://gateway.marvel.com/v1/public/characters?ts=\".concat(_comic_js__WEBPACK_IMPORTED_MODULE_0__.timeStamp, \"&apikey=\").concat(_comic_js__WEBPACK_IMPORTED_MODULE_0__.apiKey, \"&hash=\").concat(_comic_js__WEBPACK_IMPORTED_MODULE_0__.hash)).then(function (response) {\n  return response.json();\n}).then(function (jsonParsed) {\n  /* console.log(jsonParsed); */\n  var divCharacters = document.querySelector('#characters');\n  console.log(jsonParsed);\n  jsonParsed.data.results.forEach(function (element) {\n    var image = element.thumbnail.path + '.' + element.thumbnail.extension;\n    var nameCharacters = element.name;\n\n    if (image !== \"http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg\") {\n      createDivCharacters(image, nameCharacters, divCharacters);\n    }\n  });\n});\n\nfunction createDivCharacters(image, nameCharacters, divToAppend) {\n  var divPai = document.createElement('div');\n  var divFilho = document.createElement('div');\n  var textName = document.createElement(\"text\");\n  var img = document.createElement(\"img\");\n  textName.textContent = nameCharacters;\n  img.src = image;\n  divFilho.appendChild(img);\n  divFilho.appendChild(textName);\n  divPai.appendChild(divFilho);\n  divToAppend.appendChild(divPai);\n  divPai.classList.add(\"personagens\");\n}\n\n//# sourceURL=webpack://api-marvel/./src/js/characters.js?");
 
 /***/ }),
 
@@ -24,9 +24,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!*************************!*\
   !*** ./src/js/comic.js ***!
   \*************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("const timeStamp = '1654098089';\r\nconst apiKey = '4c3607b7715a0d2b401a0c68b168913b';\r\nconst hash = '14670b0fc3dff7f0e365a7b220b2ccd4';\r\n\r\nfetch(`http://gateway.marvel.com/v1/public/comics?ts=${timeStamp}&apikey=${apiKey}&hash=${hash}`).then((response) => {\r\n    return response.json();\r\n}).then((jsonParsed) => {\r\n    /* console.log(jsonParsed); */\r\n    const divComics = document.querySelector('#comics');\r\n    console.log(jsonParsed)\r\n    jsonParsed.data.results.forEach(element => {\r\n        const image = element.thumbnail.path + '.' + element.thumbnail.extension\r\n        const nameComics = element.title\r\n\r\n        if (image !== \"http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg\") {\r\n            createDivComics(image, nameComics, divComics);\r\n        }\r\n    });\r\n})\r\n\r\nfunction createDivComics(image, nameComics, divToAppend) {\r\n    const divPai = document.createElement('div');\r\n    const divFilho = document.createElement('div');\r\n    const textName = document.createElement(\"text\");\r\n    const img = document.createElement(\"img\");\r\n\r\n    textName.textContent = nameComics\r\n    img.src = image\r\n\r\n    divFilho.appendChild(img);\r\n    divFilho.appendChild(textName);\r\n    divPai.appendChild(divFilho);\r\n    divToAppend.appendChild(divPai);\r\n\r\n    divPai.classList.add(\"personagens\");\r\n\r\n}\r\n\n\n//# sourceURL=webpack://api-marvel/./src/js/comic.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"apiKey\": () => (/* binding */ apiKey),\n/* harmony export */   \"hash\": () => (/* binding */ hash),\n/* harmony export */   \"timeStamp\": () => (/* binding */ timeStamp)\n/* harmony export */ });\nvar timeStamp = '';\nvar apiKey = '';\nvar hash = '';\nfetch(\"http://gateway.marvel.com/v1/public/comics?ts=\".concat(timeStamp, \"&apikey=\").concat(apiKey, \"&hash=\").concat(hash)).then(function (response) {\n  return response.json();\n}).then(function (jsonParsed) {\n  var divComics = document.querySelector('#comics');\n  console.log(jsonParsed);\n  jsonParsed.data.results.forEach(function (element) {\n    var image = element.thumbnail.path + '.' + element.thumbnail.extension;\n    var nameComics = element.title;\n\n    if (image !== \"http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg\") {\n      createDivComics(image, nameComics, divComics);\n    }\n  });\n});\n\nfunction createDivComics(image, nameComics, divToAppend) {\n  var divPai = document.createElement('div');\n  var divFilho = document.createElement('div');\n  var textName = document.createElement(\"text\");\n  var img = document.createElement(\"img\");\n  textName.textContent = nameComics;\n  img.src = image;\n  divFilho.appendChild(img);\n  divFilho.appendChild(textName);\n  divPai.appendChild(divFilho);\n  divToAppend.appendChild(divPai);\n  divPai.classList.add(\"personagens\");\n}\n\n//# sourceURL=webpack://api-marvel/./src/js/comic.js?");
 
 /***/ }),
 
@@ -36,8 +36,17 @@ eval("const timeStamp = '1654098089';\r\nconst apiKey = '4c3607b7715a0d2b401a0c6
   \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/style.css */ \"./src/css/style.css\");\n/* harmony import */ var _comic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./comic */ \"./src/js/comic.js\");\n/* harmony import */ var _comic__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_comic__WEBPACK_IMPORTED_MODULE_1__);\n\r\n\n\n//# sourceURL=webpack://api-marvel/./src/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/style.scss */ \"./src/sass/style.scss\");\n/* harmony import */ var _comic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./comic */ \"./src/js/comic.js\");\n/* harmony import */ var _characters__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./characters */ \"./src/js/characters.js\");\n\n\n\n\n//# sourceURL=webpack://api-marvel/./src/js/index.js?");
+
+/***/ }),
+
+/***/ "./src/sass/style.scss":
+/*!*****************************!*\
+  !*** ./src/sass/style.scss ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://api-marvel/./src/sass/style.scss?");
 
 /***/ })
 
@@ -68,18 +77,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports

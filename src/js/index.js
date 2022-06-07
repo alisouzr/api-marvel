@@ -1,3 +1,4 @@
-import '../css/style.css';
+import '../sass/style.scss';
 import './comic';
+import './characters';
 
